@@ -1,0 +1,141 @@
+﻿@using MailSync.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    var tempdetails = ViewBag.TemplateDetails as List<MailSync.Data.Template>;
+}
+
+<link href="~/Content/StyleSheets/Template.css" rel="stylesheet" />
+<link href="~/Scripts/CodeMirror/upload.js" rel="stylesheet" />
+
+<script type="text/javascript">
+    function Alert() {
+        setTimeout(function () {
+            $('#addModal').modal('hide');
+            swal({
+                title: "Success",
+                text: "The file has been uploaded successfully.",
+                type: "success",
+                showCancelButton: false,
+                confirmButtonClass: "btn-default",
+                confirmButtonText: "Ok",
+                cancelButtonText: "No",
+                closeOnConfirm: true,
+                closeOnCancel: false
+            },
+                function (isConfirm) {
+                    $(".sweet-alert").hide();
+
+                    window.location.href = "/campaign/wizard/2";
+                });
+        }, 3000);
+
+    }
+
+</script>
+<style>
+    .modal {
+        text-align: center;
+    }
+
+        .modal:before {
+            display: inline-block;
+            vertical-align: middle;
+            content: " ";
+            height: 100%;
+        }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .unsubscribed {
+        background: indianred;
+    }
+
+    .subscribed {
+        background: #17987e;
+    }
+
+    .commentTypeDesc {
+        font-weight: 400;
+        padding: 2px 4px;
+        color: #fff;
+        border-radius: 4px;
+    }
+</style>
+<style>
+    .report {
+        background-image: url('../../Content/Images/templates.jpg');
+    }
+</style>
+@section BannerSection
+{
+    <div class="banner report">
+        <div class="text-cente banner-text">
+            Templates
+        </div>
+    </div>
+}
+<div class="container">
+    <div class="row">
+        <h4>Exiting Templates</h4>
+    </div>
+
+    <div class="row existing-temp">
+        @for (var i = 1; i < tempdetails.Count; i++)
+        {
+            var imgName = "defaultTemplate.svg";
+            if (i < 4) {
+                imgName = tempdetails[i].Name + ".png";
+                    }
+            <div class="col-lg-3 panel templatePanal">
+                <img src="~/Content/Templates/@imgName" />
+                <div class="temp-name">@tempdetails[i].Name</div>
+            </div>
+        }
+
+
+    </div>
+    <div class="row">
+        <h4>Custom Templates</h4>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 panel templatePanal">
+            <img src="~/Content/Images/code-your-own.svg" />
+            <div class="temp-name">Paste your own code</div>
+        </div>
+        <div class="col-lg-3 panel templatePanal">
+            <img src="~/Content/Images/import-from-file.svg" data-toggle="modal" data-target="#addModal" onclick="clear" />
+            <div class="temp-name">Upload Html</div>
+        </div>
+    </div>
+</div>
+
+@*/* Model dailgue*/*@
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel-2">Upload Template</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <span class="btn btn-primary btn-file">
+                        <input type="file" id="file-upload" />
+                    </span>
+                    <span class="fileupload-preview"></span>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dialog" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-dialog" onclick="Alert()">Ok</button>
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div><!-- modal -->

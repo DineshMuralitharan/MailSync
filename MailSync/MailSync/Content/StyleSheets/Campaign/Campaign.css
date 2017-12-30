@@ -1,0 +1,69 @@
+#campaign-page {
+  font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif; }
+  #campaign-page #myModal .model-body {
+    margin-left: 10px; }
+  #campaign-page #myModal .modal-footer {
+    text-align: center; }
+  #campaign-page #myModal .panel-default {
+    margin-right: 30px;
+    height: 150px;
+    width: 30%;
+    cursor: pointer; }
+    #campaign-page #myModal .panel-default h4 {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600; }
+    #campaign-page #myModal .panel-default p {
+      text-align: center;
+      font-size: 13px; }
+  #campaign-page #myModal .panel-default:hover {
+    border: 2px solid #2c9ab7; }
+  #campaign-page #myModal .modal-dialog {
+    width: 1000px; }
+  #campaign-page #myModal #list .campaign-section {
+    height: 190px; }
+    #campaign-page #myModal #list .campaign-section img {
+      width: 100%;
+      margin-top: 25px; }
+    #campaign-page #myModal #list .campaign-section h3 {
+      font-weight: 600;
+      margin-bottom: 20px; }
+    #campaign-page #myModal #list .campaign-section p {
+      font-size: 15px;
+      line-height: 25px;
+      margin-right: 20%; }
+  #campaign-page #myModal #list h5 {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    font-weight: 600; }
+  #campaign-page #myModal .btn-primary {
+    font-weight: 600; }
+  #campaign-page #myModal #create-campaign {
+    margin-right: 20px; }
+  #campaign-page #myModal #campaign-name {
+    margin-bottom: 30px; }
+  #campaign-page #myModal .bootstrap-select {
+    width: 280px; }
+
+#documentation {
+  margin: 30px; }
+  #documentation table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%; }
+  #documentation td, #documentation th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px; }
+  #documentation tr:nth-child(even) {
+    background-color: #dddddd; }
+  #documentation .heading {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-style: ridge;
+    padding: 20px; }
+  #documentation .description {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+/*# sourceMappingURL=Campaign.css.map */

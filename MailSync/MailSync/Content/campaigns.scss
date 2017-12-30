@@ -1,0 +1,115 @@
+#campaigns {
+    .create-camp {
+        float: right;
+        margin-top: -40px;
+        color: #ffffff;
+        background-color: #666;
+    }
+
+    .campaigns-heading {
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    .email-content-section {
+        height: 115px;
+        border-bottom: 1px solid #e0e0e0;
+        margin-top: 30px;
+
+        .img {
+            width: 50px;
+            height: 70px;
+            float: left;
+
+            .email-sending-icon {
+                width: 60%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .tab-content {
+            width: 38%;
+            float: left;
+            margin-top: -10px;
+        }
+
+        .sending-status {
+            float: left;
+            padding-right: 45px;
+
+            .badge {
+                font-size: 13px;
+                font-weight: 600;
+                font-style: normal;
+                text-align: center;
+                white-space: nowrap;
+                border-radius: 200px;
+                color: white;
+                padding: 5px 20px;
+                line-height: normal;
+                margin: 0 6px;
+                display: inline-block;
+                background-color: #35938C;
+            }
+
+            .grey-badge {
+                background-color: #4a90e2 !important;
+            }
+        }
+
+        .node-status {
+            .open-count {
+                float: left;
+                padding-right: 38px;
+            }
+        }
+
+        .edit-button {
+            float: right;
+            margin-right: 200px;
+            .edit-btn {
+                background-color: #E6E6E6;
+                color: black;
+                margin-right: 20px;
+                &:hover {
+                    background-color: #D3D3D3;
+                }
+            }
+
+            .stats-btn {
+                background-color: #E6E6E6;
+                color: black;
+
+                &:hover {
+                    background-color: #D3D3D3;
+                }
+            }
+        }
+    }
+}
+
+.success-confirmation {
+    text-align: center;
+    vertical-align: middle;
+    padding: 50px;
+}
+
+.add-subscribers, .view-campaign {
+    width: 20%;
+    padding: 10px;
+    border-radius: 4px;
+    color: #ffffff !important;
+    background-color: #666;
+    text-align: center;
+    margin-left: 40%;
+
+    a {
+        text-decoration: none;
+        color: #ffffff !important;
+        cursor: pointer;
+    }
+}
+
+.view-campaign {
+    margin-top: 20px;
+}

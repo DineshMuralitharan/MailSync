@@ -1,0 +1,114 @@
+﻿@model MailSync.Models.ListModel
+@{
+    ViewBag.Title = "Group";
+}
+
+@section Style {
+    <link href="~/Content/Group.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/Common/bootstrap-select.min.css" rel="stylesheet" />
+    
+    <style>
+        .report {
+            background-image: url('../../Content/Images/group.jpg');
+        }
+    </style>
+}
+@section scripts
+{
+    <script src="~/Scripts/Common/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/Group/Group.js"></script>
+}
+@section BannerSection
+{
+    <div class="banner report">
+        <div class="text-cente banner-text">
+            Groups
+        </div>
+    </div>
+}
+<div id="group">
+    <div class="col-lg-12 col-md-12 col-sm-12 group-heading">
+        <span>
+            <a class="create-group btn" value="Create Group" style="float: right" data-toggle="modal" data-target="#myModal">Create Group</a>
+        </span>
+    </div>
+    @if (Model.groupListValue != null)
+    {
+        foreach (var groupIteam in Model.groupListValue)
+        {
+
+            <div class="col-lg-12 col-md-12 col-sm-12 email-content-section">
+                <div class="img">
+                    @if (@groupIteam.ListID == 1)
+                    {
+                        <img class="blog-icon" src="~/Content/Images/blog-icon-new.png" />
+                    }
+                    else if (@groupIteam.ListID == 2)
+                    {
+                        <img class="cart-icon" src="~/Content/Images/cart-icon.jpg" />
+                    }
+                    else if (@groupIteam.ListID == 3)
+                    {
+                        <img class="ebook-icon" src="~/Content/Images/ebook-icon.png" />
+                    }
+                    else if (@groupIteam.ListID == 4)
+                    {
+                        <img class="renewal-icon" src="~/Content/Images/Renewal-icon.jpg" />
+                    }
+                    else if(@groupIteam.ListID != 0)
+                    {
+                        <img class="cart-icon" src="~/Content/Images/group-icon.jpg" />
+                    }
+                </div>
+                <div class="tab-content">
+                    <h4 class="email-heading"> <a href="lists/@groupIteam.ListID"> @groupIteam.ListName </a> </h4>
+                    <p> @string.Format("{0:MMM d, yyyy, h:mm tt}", @groupIteam.CreatedOn) </p>
+
+                </div>
+                <div class="slat_status sending-status">
+                    <p>@groupIteam.CustomerCount</p>
+                    <p>Subscribers</p>
+                </div>
+                <div class="node-status">
+                    <div class="open-count">
+                        <p> @groupIteam.OpenCount </p>
+                        <p> Opens </p>
+                    </div>
+                </div>
+                @*<div class="stats-button">
+                    <input type="button" value="Stats" class="stats-btn btn">
+                </div>*@
+            </div>
+        }
+    }
+</div>
+
+<div id="group-page">
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content container">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="CloseModel()">&times;</button>
+                    <h3 class="modal-title">Create Group</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-offset-3 col-lg-9" id="create_group">
+                        <h5>
+                            Group Name
+                        </h5>
+
+                        <input type="text" class="form-control" id="group-name" placeholder="Enter group name" required>
+                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="create-group" class="btn btn-primary">Create</button>
+                    <button type="button" id="cancel-group" onclick="CloseModel()" class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

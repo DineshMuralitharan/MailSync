@@ -1,0 +1,462 @@
+﻿
+@{
+    ViewBag.Title = "Documentation";
+}
+@section Style {
+    <link href="~/Content/StyleSheets/Campaign/Campaign.css" rel="stylesheet" />
+}
+<div id="documentation">
+    <div class="col-lg-12 col-md-12 col-sm-12 campaigns-heading">
+        <h2>Documentation</h2>
+        <p style="font-size:16px;">
+            The API Reference describes each available resource in the MailSync API. Learn about parameters, errors, and how to format your requests.
+        </p>
+        <table>
+            <tr>
+                <th>
+                    HTTP METHOD
+                </th>
+                <th>
+                    END POINT
+                </th>
+                <th>
+                    FUNCTION
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    POST
+                </td>
+                <td>
+                    /customer/addcustomerdetails
+                </td>
+                <td>
+                    Add customer to particular group
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    POST
+                </td>
+                <td>
+                    /customer/deletecustomer
+                </td>
+                <td>
+                    Delete customer from all group
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    POST
+                </td>
+                <td>
+                    /customer/deletecustomermapping
+                </td>
+                <td>
+                    Delete customer from particular group
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    POST
+                </td>
+                <td>
+                    /customer/unsubscribecustomerfromlist/{email_Id}/{list_Id}
+                </td>
+                <td>
+                    Unsubscribe customer from particular group
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   POST
+                </td>
+                <td>
+                    /customer/unsubscribeall/{email_Id}
+                </td>
+                <td>
+                    Unsubscribe customer from all group
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    POST
+                </td>
+                <td>
+                    /group/addgroupdetails
+                </td>
+                <td>
+                    Add new group to the list
+                </td>
+            </tr>
+        </table>
+        <div class="heading">
+            <B>POST /customer/addcustomerdetails</B>
+            <div class="description">Add customer to particular group</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        CustomerName
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer name
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        CustomerEmail
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer email Id
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        DOB
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        Date of birth of the customer
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ListId
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        Group ID need to add customer into that group
+                    </td>
+                </tr>
+            </table>
+            <p style ="margin-top:10px;"><b>Response body parameters</b></pstyle>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="heading">
+            <b>POST /customer/deletecustomer</b>
+            <div class="description">Delete customer from all group</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        CustomerEmail
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer email Id
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;"><b>Response body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="heading">
+            <b>POST /customer/deletecustomermapping</b>
+            <div class="description">Delete customer from particular group</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        CustomerEmail
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer email Id
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ListId
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        Group ID need to remove customer from that group
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;"><b>Response body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="heading">
+            <b>POST /customer/unsubscribecustomerfromlist/{email_Id}/{list_Id}</b>
+            <div class="description">Unsubscribe customer from particular group</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        email
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer email Id
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        listId
+                    </td>
+                    <td>
+                        Type: Integer
+                    </td>
+                    <td>
+                        Group ID need to unsubscribe customer from that group
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;"><b>Response body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="heading">
+            <b>POST /customer/unsubscribeall/{email_Id}</b>
+            <div class="description">Unsubscribe customer from all group</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        email
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer email Id
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;"><b>Response body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="heading">
+            <b>POST /group/addgroupdetails</b>
+            <div class="description">Add new group</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        Group Name
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        Group Name
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;"><b>Response body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="heading">
+            <b>POST /customer/addcartdetails</b>
+            <div class="description">Add customer saved product details in cart</div>
+            <p><b>Request body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        CustomerEmail
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        The customer Email Id
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ProductDetails
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        Customer saved cart details
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-top:10px;"><b>Response body parameters</b></p>
+            <table>
+                <tr>
+                    <td>
+                        IsSuccess
+                    </td>
+                    <td>
+                        Type: Boolean
+                    </td>
+                    <td>
+                        True/false
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ValidationErrorMessage
+                    </td>
+                    <td>
+                        Type: String
+                    </td>
+                    <td>
+                        An unknown error has occurred. Please try again.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

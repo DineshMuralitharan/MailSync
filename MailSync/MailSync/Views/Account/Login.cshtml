@@ -1,0 +1,114 @@
+﻿
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Description Here">
+    <link href="~/Content/StyleSheets/TemplateStyles/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/flickity.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/jquery.steps.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/StyleSheets/TemplateStyles/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="~/Scripts/TemplateScripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/flickity.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/easypiechart.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/parallax.js"></script>
+    <script src="~/Scripts/TemplateScripts/typed.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/datepicker.js"></script>
+    <script src="~/Scripts/TemplateScripts/isotope.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/ytplayer.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/lightbox.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/granim.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/jquery.steps.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/countdown.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/twitterfetcher.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/spectragram.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/smooth-scroll.min.js"></script>
+    <script src="~/Scripts/TemplateScripts/scripts.js"></script>
+</head>
+<body class=" ">
+
+    <div class="main-container">
+        <section class="height-100 imagebg text-center" data-overlay="4">
+            <div class="background-image-holder">
+                <img alt="background" src="~/Content/Images/inner-6.jpg" />
+            </div>
+            <div class="pos-vertical-center">
+                <div class="row">
+                    <div class="col-sm-7 col-md-5">
+                        <h2>Login to continue</h2>
+
+
+
+                        <div class="azurelogin type--uppercase" >
+
+                            <a href="/account/logonusingazure?returnUrl=/">
+                                <img  src="~/Content/Images/azure.png"></img> Login with Azure Ad
+                            </a>
+                        </div>
+
+
+
+                        <hr>
+                        <p>Login using your Syncfusion account</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input type="text" placeholder="Username" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="password" placeholder="Password" />
+                                </div>
+                                <div class="col-sm-12">
+                                    <button class="btn btn--primary type--uppercase" type="submit">Login</button>
+                                </div>
+                            </div>
+                            <!--end of row-->
+                        </form>
+
+                    </div>
+                </div>
+                <!--end of row-->
+            </div>
+            <!--end of container-->
+        </section>
+    </div>
+    <style>
+        .azurelogin{
+background-color: #00aced; 
+height: 37px;
+border-radius: 4px;
+text-align: center;
+padding-top: 4px;
+width: 75%;
+margin-left: 55px;
+}
+.azurelogin a{
+    color:white; 
+    text-decoration:none;
+    cursor:pointer
+}
+.azurelogin img{
+    width: 9%;
+float: left;
+margin-left: 2px;
+margin-top: -3px;  
+}
+    </style> 
+</body>
+</html>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

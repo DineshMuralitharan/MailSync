@@ -1,0 +1,101 @@
+﻿@using MailSync.Models;
+@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+    var CampaignDetails = ViewBag.CampaignDetails as CampaignDetails;
+    var EmailStatistics = ViewBag.EmailStatistics as List<CampaignStatistics>;
+
+   // var CurrentMonth = EmailStatistics.Where(x => x.CreatedDate.Month == DateTime.Now.Month).GroupBy(x => x.CreatedDate.Date).Select(x => new { date = x.Key, count = x.Count() });
+}
+
+<link href="~/Content/CampaignStatistics.css" rel="stylesheet" />
+<script src="//code.jquery.com/jquery-latest.min.js">
+</script>
+<link href="~/Scripts/ProgressBar/number-pb.css" rel="stylesheet" />
+<script src="~/Scripts/ProgressBar/src/jquery.velocity.min.js"></script>
+<script src="~/Scripts/ProgressBar/number-pb.js"></script>
+
+<div class="container">
+    <div class="row">
+        <h2 class="Page-title">Statistics - @CampaignDetails.Name </h2>
+    </div>
+    <div class="email-open">
+        <h4>Campaign Details</h4>
+        <div class="row campaignoverview">
+
+            <div class="col-lg-6 col-md-6">
+                <div>
+                    <div class="campaignlabel inlinblock left">Group: </div>
+                    <div class="campaignValue inlinblock"><a href="/lists/@CampaignDetails.ListId">@CampaignDetails.ListName</a> </div>
+                </div>
+                <div>
+                    <div class="campaignlabel inlinblock left">Type: </div>
+                    <div class="campaignValue inlinblock">@CampaignDetails.Type</div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div>
+                    <div class="campaignlabel inlinblock">Created date: </div>
+                    <div class="campaignValue inlinblock">@CampaignDetails.CreatedDate</div>
+                </div>
+                <div>
+                    <div class="campaignlabel inlinblock">Created by: </div>
+                    <div class="campaignValue inlinblock">@CampaignDetails.CreatedByUser</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="email-open">
+        <h4>Email Statistics</h4>
+        <div class="row Emailstatistics text-center">
+            <div class="col-lg-3 col-md-3 right-border top-align">
+                <div class="green-check check inlinblock"></div>
+                <div class="inlinblock">
+                    <div>@EmailStatistics.Count</div>
+                    <span>Sent</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 top-align">
+                <div class="orange-check check inlinblock"></div>
+                <div class="inlinblock">
+                    <div>@EmailStatistics.Select(x=>x.OpenCount).Count()</div>
+                    <span>Opened</span>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <canvas id="PieChart"></canvas>
+            </div>
+        </div>
+        <h4>Open Rate</h4>
+        <div class="number-pb">
+            <div class="number-pb-shown"></div>
+            <div class="number-pb-num">0%</div>
+        </div>
+
+    </div>
+    <div class="row email-open">
+        <h4>Email Statistics Chart</h4>
+        <div class="col-lg-6 col-md-6">
+            <canvas id="Weeklyreport"></canvas>
+            @Html.Hidden("Last7days", EmailStatistics)
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <canvas id="MonthlyReport"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js"></script>
+<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+<script src="~/Scripts/Statistics.js"></script>
+
+<script>
+
+    //var bars = $('.number-pb').NumberProgressBar(barOptions);
+    //bars.reach(dest, reachOptions);
+
+    var controlBar = $('.number-pb').NumberProgressBar({
+        duration: 2000,
+    });
+    controlBar.reach(88, 5);
+</script>

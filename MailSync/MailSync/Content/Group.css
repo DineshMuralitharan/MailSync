@@ -1,0 +1,74 @@
+#group .create-group {
+  float: right;
+  margin-top: -40px;
+  color: #ffffff;
+  background-color: #666; }
+#group .group-heading {
+  margin-bottom: 70px;
+  margin-top: 40px; }
+#group .email-content-section {
+  height: 115px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 30px; }
+  #group .email-content-section .img {
+    width: 50px;
+    height: 70px;
+    float: left; }
+    #group .email-content-section .img .ebook-icon, #group .email-content-section .img .cart-icon {
+      width: 65%;
+      background-repeat: no-repeat; }
+    #group .email-content-section .img .blog-icon, #group .email-content-section .img .renewal-icon {
+      width: 75%;
+      background-repeat: no-repeat; }
+  #group .email-content-section .tab-content {
+    width: 38%;
+    float: left;
+    margin-top: -10px; }
+  #group .email-content-section .sending-status {
+    float: left;
+    padding-right: 45px; }
+  #group .email-content-section .node-status .open-count {
+    float: left;
+    padding-right: 38px; }
+  #group .email-content-section .stats-button {
+    float: right; }
+    #group .email-content-section .stats-button .stats-btn {
+      margin-right: 209px; }
+      #group .email-content-section .stats-button .stats-btn:hover {
+        background-color: #D3D3D3; }
+
+#group-page {
+  font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif; }
+  #group-page #myModal .model-body {
+    margin-left: 10px; }
+  #group-page #myModal #create_group {
+    margin-left: 27% !important; }
+  #group-page #myModal .modal-footer {
+    text-align: center;
+    border: none !important; }
+  #group-page #myModal .panel-default {
+    margin-right: 30px;
+    height: 150px;
+    width: 30%;
+    cursor: pointer; }
+    #group-page #myModal .panel-default h4 {
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600; }
+    #group-page #myModal .panel-default p {
+      text-align: center;
+      font-size: 13px; }
+  #group-page #myModal .panel-default:hover {
+    border: 2px solid #2c9ab7; }
+  #group-page #myModal .modal-dialog {
+    width: 1000px; }
+  #group-page #myModal .btn-primary {
+    font-weight: 600; }
+  #group-page #myModal #create-group {
+    margin-right: 20px; }
+  #group-page #myModal #group-name {
+    margin-bottom: 30px; }
+  #group-page #myModal .bootstrap-select {
+    width: 280px; }
+
+/*# sourceMappingURL=Group.css.map */

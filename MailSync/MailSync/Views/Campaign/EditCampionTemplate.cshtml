@@ -1,0 +1,183 @@
+﻿@using MailSync.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+    var tempdetails = ViewBag.TemplateDetails as List<MailSync.Data.Template>;
+}
+
+<link href="~/Content/StyleSheets/Template.css" rel="stylesheet" />
+<link href="~/Scripts/CodeMirror/upload.js" rel="stylesheet" />
+
+<script type="text/javascript">
+    function Alert() {
+        setTimeout(function () {
+            $('#addModal').modal('hide');
+            swal({
+                title: "Success",
+                text: "The file has been uploaded successfully.",
+                type: "success",
+                showCancelButton: false,
+                confirmButtonClass: "btn-default",
+                confirmButtonText: "Ok",
+                cancelButtonText: "No",
+                closeOnConfirm: true,
+                closeOnCancel: false
+            },
+                function (isConfirm) {
+                    $(".sweet-alert").hide();
+
+                    window.location.href = "/campaign/wizard/2";
+                });
+        }, 3000);
+
+    }
+
+</script>
+<style>
+    .modal {
+        text-align: center;
+    }
+
+        .modal:before {
+            display: inline-block;
+            vertical-align: middle;
+            content: " ";
+            height: 100%;
+        }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .unsubscribed {
+        background: indianred;
+    }
+
+    .subscribed {
+        background: #17987e;
+    }
+
+    .commentTypeDesc {
+        font-weight: 400;
+        padding: 2px 4px;
+        color: #fff;
+        border-radius: 4px;
+    }
+</style>
+<style>
+    .report {
+        background-image: url('../../Content/Images/templates.jpg');
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <h4>Exiting Templates</h4>
+    </div>
+
+    <div class="row existing-temp">
+        @for (var i = 1; i < tempdetails.Count; i++)
+        {
+            var url = "/campaign/wizard/" + ViewBag.campignTypeId + "/template/"+ ViewBag.CampignId + "/exiting/"+ tempdetails[i].Id;
+            var imgName = @tempdetails[i].Name + ".png";
+            <div class="col-lg-3 panel templatePanal">
+                <a href="@url">
+
+                    <img src="~/Content/Templates/@imgName" onclick="window.location.href = url" />
+                </a>
+                <div class="temp-name">@tempdetails[i].Name</div>
+            </div>
+        }
+
+
+    </div>
+    <div class="row">
+        <h4>Custom Templates</h4>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 panel templatePanal">
+            <img src="~/Content/Images/code-your-own.svg" />
+            <div class="temp-name">Paste your own code</div>
+        </div>
+        <div class="col-lg-3 panel templatePanal">
+            <img src="~/Content/Images/import-from-file.svg" data-toggle="modal" data-target="#addModal" onclick="clear" />
+            <div class="temp-name">Upload Html</div>
+        </div>
+    </div>
+</div>
+
+@*/* Model dailgue*/*@
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel-2">Upload Template</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <span class="btn btn-primary btn-file">
+                        <input type="file" id="file-upload" onchange="getFileData(this)" />
+                    </span>
+                    <span class="fileupload-preview"></span>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dialog" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-dialog" onclick="GetFileName()">Ok</button>
+            </div>
+        </div><!-- modal-content -->
+    </div><!-- modal-dialog -->
+</div><!-- modal -->
+<input type="hidden" value="@ViewBag.CampignId" id="campignId" />
+<input type="hidden" value="@ViewBag.campignTypeId" id="campignTypeId" />
+
+<script type="text/javascript">
+    var filename;
+    function getFileData(myFile) {
+        var file = myFile.files[0];
+        filename = file.name.split(".");
+    }
+    
+    function GetFileName() {
+
+        var campignId = $("#campignId").val();
+        $.ajax({
+            type: 'POST',
+            url: "/camapign/updatetempplate/" + campignId +"/"+filename[0],
+            dataType: 'json',
+            error: function () {
+                swal("Error", "An error occurred while processing. Please try again later.", "error");
+            },
+            success: function (status) {
+                $('#addModal').modal('hide');
+                if (status.data === true) {
+                    swal({
+
+                        title: "Success",
+                        text: "The " + filename[0] + " has been uploaded successfully.",
+                        type: "success",
+                        showCancelButton: false,
+                        confirmButtonClass: "btn-default",
+                        confirmButtonText: "Ok",
+                        cancelButtonText: "No",
+                        closeOnConfirm: true,
+                        closeOnCancel: false
+                    },
+                        function (isConfirm) {
+                            $(".sweet-alert").hide();
+                            var campignTypeId = $("#campignTypeId").val();
+                            window.location.href = "/campaign/wizard/" + campignTypeId;
+                        });
+                } else {
+                    swal("Error", "An error occurred while processing. Please try again later.", "error");
+                }
+            },
+            complete: function () {
+            }
+        });
+    }
+</script>

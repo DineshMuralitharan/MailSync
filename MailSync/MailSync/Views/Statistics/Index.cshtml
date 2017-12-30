@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+@section Style {
+    <link href="~/Content/campaigns.css" rel="stylesheet" />
+}
+@section BannerSection
+{
+    <div class="banner report">
+        <div class="text-center">
+            Statistics
+        </div>
+    </div>
+}
+<div id="campaigns">
+    <div class="col-lg-12 col-md-12 col-sm-12 campaigns-heading">
+        <h2>Reports</h2>
+    </div>
+    @if (Model.Values != null)
+    {
+        foreach (var item in Model.Values)
+        {
+
+    <div class="col-lg-12 col-md-12 col-sm-12 email-content-section">
+        <div class="img">
+            <img class="email-sending-icon" src="~/Content/Images/email-icon.jpg" />
+            @*<span class="email-sending-icon"> </span>*@
+        </div>
+        <a href="campaign/@item.CampaignId" style="color:black" target="_blank">
+            <div class="tab-content" style="cursor:pointer">
+                <h4 class="email-heading" style="color:#428bca"> @item.Name </h4>
+                <p> @item.Type </p>
+                <p> @string.Format("{0:MMM d, yyyy, h:mm tt}", @item.CreatedDate) by @item.CreatedByUser</p>
+            </div>
+        </a>
+        <div class="slat_status sending-status">
+            @if (item.MailStatus == "Sent")
+                    {
+                <span data-dojo-attach-point="node_badge" class="badge info">@item.MailStatus</span>
+            }
+            else if (item.MailStatus == "Draft")
+            {
+                <span data-dojo-attach-point="node_badge" class="badge grey-badge info">@item.MailStatus</span>
+            }
+            else
+            {
+                <span data-dojo-attach-point="node_badge" class="badge info">@item.MailStatus</span>
+            }
+        </div>
+        @if (item.MailStatus != "Draft")
+        {
+            <div class="node-status">
+                <div class="open-count">
+                    <p> @item.OpenCount </p>
+                    <p> Opens </p>
+                </div>
+            </div>
+        }
+    </div>
+        }
+    }
+</div>
+
+
+<style>
+    .report {
+        background-image: url('../../Content/Images/Statistics.jpg');
+    }
+</style>

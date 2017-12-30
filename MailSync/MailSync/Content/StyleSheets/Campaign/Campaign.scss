@@ -1,0 +1,114 @@
+
+
+#campaign-page {
+    font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
+
+    #myModal {
+        .model-body {
+            margin-left: 10px;
+        }
+
+        .modal-footer {
+            text-align: center;
+        }
+
+        .panel-default {
+            margin-right: 30px;
+            height: 150px;
+            width: 30%;
+            cursor: pointer;
+
+            h4 {
+                text-align: center;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            p {
+                text-align: center;
+                font-size: 13px;
+            }
+        }
+
+        .panel-default:hover {
+            border: 2px solid #2c9ab7;
+        }
+
+        .modal-dialog {
+            width: 1000px;
+        }
+
+        #list {
+            .campaign-section {
+                height: 190px;
+
+                img {
+                    width: 100%;
+                    margin-top: 25px;
+                }
+
+                h3 {
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 25px;
+                    margin-right: 20%;
+                }
+            }
+
+            h5 {
+                margin-bottom: 20px;
+                margin-top: 0px;
+                font-weight: 600;
+            }
+        }
+
+        .btn-primary{           
+            font-weight: 600;
+        }
+
+        #create-campaign {
+            margin-right: 20px;
+        }
+
+        #campaign-name{ 
+            margin-bottom:30px;
+        }
+
+        .bootstrap-select{
+            width: 280px;
+        }
+    }
+}
+
+#documentation
+{
+    margin:30px;
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+   }
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.heading{
+    margin-top:30px;
+    margin-bottom:20px;
+    border-style:ridge;
+    padding: 20px;
+}
+.description{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+}

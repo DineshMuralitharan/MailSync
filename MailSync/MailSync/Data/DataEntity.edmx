@@ -1,0 +1,1065 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CampaignListMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignId" Type="int" />
+          <Property Name="ListId" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campaigns">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsCompleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="CampaignTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CartDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerEmail" Type="nvarchar(max)" />
+          <Property Name="ProductDetails" Type="text" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="CustomerList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerListMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="ListId" Type="int" />
+          <Property Name="IsUnsubscribed" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsUnsubscribed" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerListId" Type="int" />
+          <Property Name="CampaignId" Type="int" />
+          <Property Name="TemplateId" Type="int" />
+          <Property Name="EMailTemplate" Type="text" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ScheduledDate" Type="datetime" Nullable="false" />
+          <Property Name="IsMailSent" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar(max)" />
+          <Property Name="IsStarted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignsId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="emailSubject" Type="nvarchar" MaxLength="50" />
+          <Property Name="fromName" Type="nvarchar" MaxLength="50" />
+          <Property Name="fromemail" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailStatistics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReportId" Type="int" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="CampaignId" Type="int" />
+          <Property Name="IsOpen" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="OpenedDate" Type="datetime" />
+          <Property Name="EmailId" Type="int" />
+          <Property Name="SentDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignId" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsOnce" Type="bit" Nullable="false" />
+          <Property Name="IsEveryDate" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CampaignId" Type="int" />
+        </EntityType>
+        <EntityType Name="Templates">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="TemplateContent" Type="text" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CampaignL__Campa__32E0915F">
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="0..1" />
+          <End Role="CampaignListMapping" Type="Self.CampaignListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignListMapping">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CampaignL__ListI__33D4B598">
+          <End Role="CustomerList" Type="Self.CustomerList" Multiplicity="0..1" />
+          <End Role="CampaignListMapping" Type="Self.CampaignListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignListMapping">
+              <PropertyRef Name="ListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Campaigns__Type__22AA2996">
+          <End Role="CampaignTypes" Type="Self.CampaignTypes" Multiplicity="0..1" />
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CampaignTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaigns">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustomerL__Custo__36B12243">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="CustomerListMapping" Type="Self.CustomerListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerListMapping">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustomerL__ListI__37A5467C">
+          <End Role="CustomerList" Type="Self.CustomerList" Multiplicity="0..1" />
+          <End Role="CustomerListMapping" Type="Self.CustomerListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerListMapping">
+              <PropertyRef Name="ListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Email__CampaignI__276EDEB3">
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="0..1" />
+          <End Role="Email" Type="Self.Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Email__CustomerL__267ABA7A">
+          <End Role="CustomerList" Type="Self.CustomerList" Multiplicity="0..1" />
+          <End Role="Email" Type="Self.Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="CustomerListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Email__TemplateI__286302EC">
+          <End Role="Templates" Type="Self.Templates" Multiplicity="0..1" />
+          <End Role="Email" Type="Self.Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Templates">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="TemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailDeta__Campa__3B75D760">
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="1" />
+          <End Role="EmailDetails" Type="Self.EmailDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailDetails">
+              <PropertyRef Name="CampaignsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Campa__300424B4">
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Custo__2F10007B">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Email__38996AB5">
+          <End Role="Email" Type="Self.Email" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Email">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="EmailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Repor__2E1BDC42">
+          <End Role="Reports" Type="Self.Reports" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reports__Campaig__2B3F6F97">
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="0..1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ScheduleD__Campa__4222D4EF">
+          <End Role="Campaigns" Type="Self.Campaigns" Multiplicity="0..1" />
+          <End Role="ScheduleDetails" Type="Self.ScheduleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleDetails">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataEntityModelStoreContainer">
+          <EntitySet Name="CampaignListMapping" EntityType="Self.CampaignListMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Campaigns" EntityType="Self.Campaigns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CampaignTypes" EntityType="Self.CampaignTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CartDetails" EntityType="Self.CartDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerList" EntityType="Self.CustomerList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerListMapping" EntityType="Self.CustomerListMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailDetails" EntityType="Self.EmailDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailStatistics" EntityType="Self.EmailStatistics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScheduleDetails" EntityType="Self.ScheduleDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Templates" EntityType="Self.Templates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CampaignL__Campa__32E0915F" Association="Self.FK__CampaignL__Campa__32E0915F">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="CampaignListMapping" EntitySet="CampaignListMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CampaignL__ListI__33D4B598" Association="Self.FK__CampaignL__ListI__33D4B598">
+            <End Role="CustomerList" EntitySet="CustomerList" />
+            <End Role="CampaignListMapping" EntitySet="CampaignListMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Campaigns__Type__22AA2996" Association="Self.FK__Campaigns__Type__22AA2996">
+            <End Role="CampaignTypes" EntitySet="CampaignTypes" />
+            <End Role="Campaigns" EntitySet="Campaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustomerL__Custo__36B12243" Association="Self.FK__CustomerL__Custo__36B12243">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="CustomerListMapping" EntitySet="CustomerListMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustomerL__ListI__37A5467C" Association="Self.FK__CustomerL__ListI__37A5467C">
+            <End Role="CustomerList" EntitySet="CustomerList" />
+            <End Role="CustomerListMapping" EntitySet="CustomerListMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Email__CampaignI__276EDEB3" Association="Self.FK__Email__CampaignI__276EDEB3">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="Email" EntitySet="Email" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Email__CustomerL__267ABA7A" Association="Self.FK__Email__CustomerL__267ABA7A">
+            <End Role="CustomerList" EntitySet="CustomerList" />
+            <End Role="Email" EntitySet="Email" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Email__TemplateI__286302EC" Association="Self.FK__Email__TemplateI__286302EC">
+            <End Role="Templates" EntitySet="Templates" />
+            <End Role="Email" EntitySet="Email" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailDeta__Campa__3B75D760" Association="Self.FK__EmailDeta__Campa__3B75D760">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="EmailDetails" EntitySet="EmailDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Campa__300424B4" Association="Self.FK__EmailStat__Campa__300424B4">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Custo__2F10007B" Association="Self.FK__EmailStat__Custo__2F10007B">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Email__38996AB5" Association="Self.FK__EmailStat__Email__38996AB5">
+            <End Role="Email" EntitySet="Email" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Repor__2E1BDC42" Association="Self.FK__EmailStat__Repor__2E1BDC42">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reports__Campaig__2B3F6F97" Association="Self.FK__Reports__Campaig__2B3F6F97">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ScheduleD__Campa__4222D4EF" Association="Self.FK__ScheduleD__Campa__4222D4EF">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="ScheduleDetails" EntitySet="ScheduleDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CampaignListMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignId" Type="Int32" />
+          <Property Name="ListId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="Self.FK__CampaignL__Campa__32E0915F" FromRole="CampaignListMapping" ToRole="Campaigns" />
+          <NavigationProperty Name="CustomerList" Relationship="Self.FK__CampaignL__ListI__33D4B598" FromRole="CampaignListMapping" ToRole="CustomerList" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CampaignListMappings" Relationship="Self.FK__CampaignL__Campa__32E0915F" FromRole="Campaigns" ToRole="CampaignListMapping" />
+          <NavigationProperty Name="CampaignType" Relationship="Self.FK__Campaigns__Type__22AA2996" FromRole="Campaigns" ToRole="CampaignTypes" />
+          <NavigationProperty Name="Emails" Relationship="Self.FK__Email__CampaignI__276EDEB3" FromRole="Campaigns" ToRole="Email" />
+          <NavigationProperty Name="EmailStatistics" Relationship="Self.FK__EmailStat__Campa__300424B4" FromRole="Campaigns" ToRole="EmailStatistics" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__Campaig__2B3F6F97" FromRole="Campaigns" ToRole="Reports" />
+          <NavigationProperty Name="EmailDetails" Relationship="DataEntityModel.FK__EmailDeta__Campa__3B75D760" FromRole="Campaign" ToRole="EmailDetail" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <NavigationProperty Name="ScheduleDetails" Relationship="DataEntityModel.FK__ScheduleD__Campa__4222D4EF" FromRole="Campaign" ToRole="ScheduleDetail" />
+        </EntityType>
+        <EntityType Name="CampaignType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Campaigns" Relationship="Self.FK__Campaigns__Type__22AA2996" FromRole="CampaignTypes" ToRole="Campaigns" />
+        </EntityType>
+        <EntityType Name="CustomerList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CampaignListMappings" Relationship="Self.FK__CampaignL__ListI__33D4B598" FromRole="CustomerList" ToRole="CampaignListMapping" />
+          <NavigationProperty Name="CustomerListMappings" Relationship="Self.FK__CustomerL__ListI__37A5467C" FromRole="CustomerList" ToRole="CustomerListMapping" />
+          <NavigationProperty Name="Emails" Relationship="Self.FK__Email__CustomerL__267ABA7A" FromRole="CustomerList" ToRole="Email" />
+        </EntityType>
+        <EntityType Name="CustomerListMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="ListId" Type="Int32" />
+          <Property Name="IsUnsubscribed" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CustomerList" Relationship="Self.FK__CustomerL__ListI__37A5467C" FromRole="CustomerListMapping" ToRole="CustomerList" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__CustomerL__Custo__36B12243" FromRole="CustomerListMapping" ToRole="Customers" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsUnsubscribed" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CustomerListMappings" Relationship="Self.FK__CustomerL__Custo__36B12243" FromRole="Customers" ToRole="CustomerListMapping" />
+          <NavigationProperty Name="EmailStatistics" Relationship="Self.FK__EmailStat__Custo__2F10007B" FromRole="Customers" ToRole="EmailStatistics" />
+        </EntityType>
+        <EntityType Name="Email">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerListId" Type="Int32" />
+          <Property Name="CampaignId" Type="Int32" />
+          <Property Name="TemplateId" Type="Int32" />
+          <Property Name="EMailTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ScheduledDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsMailSent" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="Self.FK__Email__CampaignI__276EDEB3" FromRole="Email" ToRole="Campaigns" />
+          <NavigationProperty Name="CustomerList" Relationship="Self.FK__Email__CustomerL__267ABA7A" FromRole="Email" ToRole="CustomerList" />
+          <NavigationProperty Name="Template" Relationship="Self.FK__Email__TemplateI__286302EC" FromRole="Email" ToRole="Templates" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsStarted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EmailStatistics" Relationship="DataEntityModel.FK__EmailStat__Email__38996AB5" FromRole="Email" ToRole="EmailStatistic" />
+        </EntityType>
+        <EntityType Name="EmailStatistic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReportId" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="CampaignId" Type="Int32" />
+          <Property Name="IsOpen" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="Self.FK__EmailStat__Campa__300424B4" FromRole="EmailStatistics" ToRole="Campaigns" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__EmailStat__Custo__2F10007B" FromRole="EmailStatistics" ToRole="Customers" />
+          <NavigationProperty Name="Report" Relationship="Self.FK__EmailStat__Repor__2E1BDC42" FromRole="EmailStatistics" ToRole="Reports" />
+          <Property Name="OpenedDate" Type="DateTime" Precision="3" />
+          <Property Name="EmailId" Type="Int32" />
+          <NavigationProperty Name="Email" Relationship="DataEntityModel.FK__EmailStat__Email__38996AB5" FromRole="EmailStatistic" ToRole="Email" />
+          <Property Name="SentDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignId" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="Self.FK__Reports__Campaig__2B3F6F97" FromRole="Reports" ToRole="Campaigns" />
+          <NavigationProperty Name="EmailStatistics" Relationship="Self.FK__EmailStat__Repor__2E1BDC42" FromRole="Reports" ToRole="EmailStatistics" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Emails" Relationship="Self.FK__Email__TemplateI__286302EC" FromRole="Templates" ToRole="Email" />
+          <Property Name="TemplateContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CampaignL__Campa__32E0915F">
+          <End Role="Campaigns" Type="Self.Campaign" Multiplicity="0..1" />
+          <End Role="CampaignListMapping" Type="Self.CampaignListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignListMapping">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CampaignL__ListI__33D4B598">
+          <End Role="CustomerList" Type="Self.CustomerList" Multiplicity="0..1" />
+          <End Role="CampaignListMapping" Type="Self.CampaignListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CampaignListMapping">
+              <PropertyRef Name="ListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Campaigns__Type__22AA2996">
+          <End Role="CampaignTypes" Type="Self.CampaignType" Multiplicity="0..1" />
+          <End Role="Campaigns" Type="Self.Campaign" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CampaignTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Campaigns">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Email__CampaignI__276EDEB3">
+          <End Role="Campaigns" Type="Self.Campaign" Multiplicity="0..1" />
+          <End Role="Email" Type="Self.Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Campa__300424B4">
+          <End Role="Campaigns" Type="Self.Campaign" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reports__Campaig__2B3F6F97">
+          <End Role="Campaigns" Type="Self.Campaign" Multiplicity="0..1" />
+          <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustomerL__ListI__37A5467C">
+          <End Role="CustomerList" Type="Self.CustomerList" Multiplicity="0..1" />
+          <End Role="CustomerListMapping" Type="Self.CustomerListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerListMapping">
+              <PropertyRef Name="ListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Email__CustomerL__267ABA7A">
+          <End Role="CustomerList" Type="Self.CustomerList" Multiplicity="0..1" />
+          <End Role="Email" Type="Self.Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="CustomerListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CustomerL__Custo__36B12243">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="CustomerListMapping" Type="Self.CustomerListMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerListMapping">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Custo__2F10007B">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Email__TemplateI__286302EC">
+          <End Role="Templates" Type="Self.Template" Multiplicity="0..1" />
+          <End Role="Email" Type="Self.Email" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Templates">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Email">
+              <PropertyRef Name="TemplateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EmailStat__Repor__2E1BDC42">
+          <End Role="Reports" Type="Self.Report" Multiplicity="0..1" />
+          <End Role="EmailStatistics" Type="Self.EmailStatistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistics">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CampaignListMappings" EntityType="Self.CampaignListMapping" />
+          <EntitySet Name="Campaigns" EntityType="Self.Campaign" />
+          <EntitySet Name="CampaignTypes" EntityType="Self.CampaignType" />
+          <EntitySet Name="CustomerLists" EntityType="Self.CustomerList" />
+          <EntitySet Name="CustomerListMappings" EntityType="Self.CustomerListMapping" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Emails" EntityType="Self.Email" />
+          <EntitySet Name="EmailStatistics" EntityType="Self.EmailStatistic" />
+          <EntitySet Name="Reports" EntityType="Self.Report" />
+          <EntitySet Name="Templates" EntityType="Self.Template" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__CampaignL__Campa__32E0915F" Association="Self.FK__CampaignL__Campa__32E0915F">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="CampaignListMapping" EntitySet="CampaignListMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CampaignL__ListI__33D4B598" Association="Self.FK__CampaignL__ListI__33D4B598">
+            <End Role="CustomerList" EntitySet="CustomerLists" />
+            <End Role="CampaignListMapping" EntitySet="CampaignListMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Campaigns__Type__22AA2996" Association="Self.FK__Campaigns__Type__22AA2996">
+            <End Role="CampaignTypes" EntitySet="CampaignTypes" />
+            <End Role="Campaigns" EntitySet="Campaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Email__CampaignI__276EDEB3" Association="Self.FK__Email__CampaignI__276EDEB3">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="Email" EntitySet="Emails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Campa__300424B4" Association="Self.FK__EmailStat__Campa__300424B4">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reports__Campaig__2B3F6F97" Association="Self.FK__Reports__Campaig__2B3F6F97">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustomerL__ListI__37A5467C" Association="Self.FK__CustomerL__ListI__37A5467C">
+            <End Role="CustomerList" EntitySet="CustomerLists" />
+            <End Role="CustomerListMapping" EntitySet="CustomerListMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Email__CustomerL__267ABA7A" Association="Self.FK__Email__CustomerL__267ABA7A">
+            <End Role="CustomerList" EntitySet="CustomerLists" />
+            <End Role="Email" EntitySet="Emails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CustomerL__Custo__36B12243" Association="Self.FK__CustomerL__Custo__36B12243">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="CustomerListMapping" EntitySet="CustomerListMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Custo__2F10007B" Association="Self.FK__EmailStat__Custo__2F10007B">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Email__TemplateI__286302EC" Association="Self.FK__Email__TemplateI__286302EC">
+            <End Role="Templates" EntitySet="Templates" />
+            <End Role="Email" EntitySet="Emails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Repor__2E1BDC42" Association="Self.FK__EmailStat__Repor__2E1BDC42">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="EmailStatistics" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EmailStat__Email__38996AB5" Association="DataEntityModel.FK__EmailStat__Email__38996AB5">
+            <End Role="Email" EntitySet="Emails" />
+            <End Role="EmailStatistic" EntitySet="EmailStatistics" />
+          </AssociationSet>
+          <EntitySet Name="EmailDetails" EntityType="DataEntityModel.EmailDetail" />
+          <AssociationSet Name="FK__EmailDeta__Campa__3B75D760" Association="DataEntityModel.FK__EmailDeta__Campa__3B75D760">
+            <End Role="Campaign" EntitySet="Campaigns" />
+            <End Role="EmailDetail" EntitySet="EmailDetails" />
+          </AssociationSet>
+          <EntitySet Name="CartDetails" EntityType="DataEntityModel.CartDetail" />
+          <EntitySet Name="ScheduleDetails" EntityType="DataEntityModel.ScheduleDetail" />
+          <AssociationSet Name="FK__ScheduleD__Campa__4222D4EF" Association="DataEntityModel.FK__ScheduleD__Campa__4222D4EF">
+            <End Role="Campaign" EntitySet="Campaigns" />
+            <End Role="ScheduleDetail" EntitySet="ScheduleDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK__EmailStat__Email__38996AB5">
+          <End Type="DataEntityModel.Email" Role="Email" Multiplicity="0..1" />
+          <End Type="DataEntityModel.EmailStatistic" Role="EmailStatistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Email">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailStatistic">
+              <PropertyRef Name="EmailId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EmailDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignsId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="emailSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fromName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fromemail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Campaign" Relationship="DataEntityModel.FK__EmailDeta__Campa__3B75D760" FromRole="EmailDetail" ToRole="Campaign" />
+        </EntityType>
+        <Association Name="FK__EmailDeta__Campa__3B75D760">
+          <End Type="DataEntityModel.Campaign" Role="Campaign" Multiplicity="1" />
+          <End Type="DataEntityModel.EmailDetail" Role="EmailDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmailDetail">
+              <PropertyRef Name="CampaignsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CartDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ScheduleDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsOnce" Type="Boolean" Nullable="false" />
+          <Property Name="IsEveryDate" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CampaignId" Type="Int32" />
+          <NavigationProperty Name="Campaign" Relationship="DataEntityModel.FK__ScheduleD__Campa__4222D4EF" FromRole="ScheduleDetail" ToRole="Campaign" />
+        </EntityType>
+        <Association Name="FK__ScheduleD__Campa__4222D4EF">
+          <End Type="DataEntityModel.Campaign" Role="Campaign" Multiplicity="0..1" />
+          <End Type="DataEntityModel.ScheduleDetail" Role="ScheduleDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaign">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ScheduleDetail">
+              <PropertyRef Name="CampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataEntityModelStoreContainer" CdmEntityContainer="DataEntities">
+          <EntitySetMapping Name="CampaignListMappings">
+            <EntityTypeMapping TypeName="DataEntityModel.CampaignListMapping">
+              <MappingFragment StoreEntitySet="CampaignListMapping">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="ListId" ColumnName="ListId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campaigns">
+            <EntityTypeMapping TypeName="DataEntityModel.Campaign">
+              <MappingFragment StoreEntitySet="Campaigns">
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignTypes">
+            <EntityTypeMapping TypeName="DataEntityModel.CampaignType">
+              <MappingFragment StoreEntitySet="CampaignTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerLists">
+            <EntityTypeMapping TypeName="DataEntityModel.CustomerList">
+              <MappingFragment StoreEntitySet="CustomerList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerListMappings">
+            <EntityTypeMapping TypeName="DataEntityModel.CustomerListMapping">
+              <MappingFragment StoreEntitySet="CustomerListMapping">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="ListId" ColumnName="ListId" />
+                <ScalarProperty Name="IsUnsubscribed" ColumnName="IsUnsubscribed" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="DataEntityModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsUnsubscribed" ColumnName="IsUnsubscribed" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emails">
+            <EntityTypeMapping TypeName="DataEntityModel.Email">
+              <MappingFragment StoreEntitySet="Email">
+                <ScalarProperty Name="IsStarted" ColumnName="IsStarted" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustomerListId" ColumnName="CustomerListId" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="EMailTemplate" ColumnName="EMailTemplate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ScheduledDate" ColumnName="ScheduledDate" />
+                <ScalarProperty Name="IsMailSent" ColumnName="IsMailSent" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailStatistics">
+            <EntityTypeMapping TypeName="DataEntityModel.EmailStatistic">
+              <MappingFragment StoreEntitySet="EmailStatistics">
+                <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="OpenedDate" ColumnName="OpenedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="IsOpen" ColumnName="IsOpen" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="DataEntityModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Templates">
+            <EntityTypeMapping TypeName="DataEntityModel.Template">
+              <MappingFragment StoreEntitySet="Templates">
+                <ScalarProperty Name="TemplateContent" ColumnName="TemplateContent" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DataEntityModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailDetails">
+            <EntityTypeMapping TypeName="DataEntityModel.EmailDetail">
+              <MappingFragment StoreEntitySet="EmailDetails">
+                <ScalarProperty Name="fromemail" ColumnName="fromemail" />
+                <ScalarProperty Name="fromName" ColumnName="fromName" />
+                <ScalarProperty Name="emailSubject" ColumnName="emailSubject" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CampaignsId" ColumnName="CampaignsId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CartDetails">
+            <EntityTypeMapping TypeName="DataEntityModel.CartDetail">
+              <MappingFragment StoreEntitySet="CartDetails">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ProductDetails" ColumnName="ProductDetails" />
+                <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleDetails">
+            <EntityTypeMapping TypeName="DataEntityModel.ScheduleDetail">
+              <MappingFragment StoreEntitySet="ScheduleDetails">
+                <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsEveryDate" ColumnName="IsEveryDate" />
+                <ScalarProperty Name="IsOnce" ColumnName="IsOnce" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

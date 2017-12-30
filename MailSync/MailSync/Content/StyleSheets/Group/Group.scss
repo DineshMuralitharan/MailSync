@@ -1,0 +1,60 @@
+#group-page {
+    font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
+
+    #myModal {
+        .model-body {
+            margin-left: 10px;
+        }        
+            #create_group
+                {
+               margin-left:27%!important;
+            }
+        .modal-footer {
+            text-align: center;
+            border:none!important;
+        }
+
+        .panel-default {
+            margin-right: 30px;
+            height: 150px;
+            width: 30%;
+            cursor: pointer;
+
+            h4 {
+                text-align: center;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            p {
+                text-align: center;
+                font-size: 13px;
+            }
+        }
+
+        .panel-default:hover {
+            border: 2px solid #2c9ab7;
+        }
+
+        .modal-dialog {
+            width: 1000px;
+        }
+         
+
+        .btn-primary{           
+            font-weight: 600;
+        }
+
+        #create-group {
+            margin-right: 20px;
+        }
+
+        #group-name{ 
+            margin-bottom:30px;
+        }
+
+        .bootstrap-select{
+            width: 280px;
+        }
+    }
+}

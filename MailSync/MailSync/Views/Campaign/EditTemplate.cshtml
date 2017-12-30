@@ -1,0 +1,94 @@
+﻿@model MailSync.Data.Template
+@{
+    ViewBag.Title = "EditTemplate";
+}
+
+<h2>EditTemplate</h2>
+@section style {
+    
+<link href="~/Content/StyleSheets/ej.theme.min.css" rel="stylesheet" />
+<link href="~/Content/StyleSheets/ej.web.all.min.css" rel="stylesheet" />
+   
+    <style>
+        .CodeMirror {
+            min-height: 600px;
+            margin: 3px 0px !important;
+            height: 249px;
+        }    
+    </style>
+}
+
+@section Scripts {
+
+  <script src="~/Scripts/js/ej1splitter.min.js"></script>
+
+<script src="~/Scripts/CodeMirror/lib/codemirror.js"></script>
+
+<script src="~/Scripts/CodeMirror/lib/overlay.js"></script>
+<link href="~/Scripts/CodeMirror/lib/codemirror.css" rel="stylesheet" />
+
+<link href="~/Scripts/CodeMirror/lib/docs.css" rel="stylesheet" />
+
+<script src="~/Scripts/CodeMirror/lib/javascript.js"></script>
+    <script type="text/javascript">
+      
+        $(document).ready(function () {
+
+            $("#releaseplansplitter").ejSplitter({
+                height: 600, width: "100%",
+                create: "oncreate",
+                enableAutoResize: true,
+                properties: [{ paneSize: "50%" }, { collapsible: true }],
+            });
+
+            
+        });        
+        var code;
+        function oncreate(args) {
+            
+            //var editor = CodeMirror.fromTextArea(document.getElementById("code-template"), {
+            //    lineNumbers: true,
+            //    height: "350px",
+            //   mode: "mustache" 
+            //});
+
+            code = CodeMirror.fromTextArea(document.getElementById("code-template"), {
+                lineNumbers: true,
+                height: "350px",
+                parserfile: ["parsexml.js", "parsecss.js", "tokenizejavascript.js", "parsejavascript.js", "parsehtmlmixed.js"],
+                stylesheet: ["codemirror/css/xmlcolors.css", "codemirror/css/jscolors.css", "codemirror/css/csscolors.css"],
+                path: "/Scripts/CodeMirror/lib/"
+            });
+            //code = CodeMirror.fromTextArea(document.getElementById("code-template"),
+            //    {
+            //        lineNumbers: true,
+            //        matchBrackets: true,
+            //        mode: "htmlmixed",
+            //        lint: true
+            //    });
+        }
+
+        function Loadtemplate()
+        {
+            $(".htmlcontent").html(code.getValue());
+        }
+    </script>
+}
+
+<input type="button" class="btn pull-right" value="refresh" onclick="Loadtemplate()" style="margin-right:0px;margin:20px"/>
+
+<input type="button" class="btn pull-right" value="Save" style="margin:20px"/>
+
+<div id="releaseplansplitter" class=" card-panel">
+    <div class="htmlcontent">@Html.Raw( @Model.TemplateContent) </div>
+    <div class="rightpane">
+        <textarea id="code-template">
+          @Model.TemplateContent
+        </textarea>
+    </div>
+    
+ </div>
+
+
+
+

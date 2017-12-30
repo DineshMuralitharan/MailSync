@@ -1,0 +1,252 @@
+﻿@model MailSync.Models.CampaignDetails
+
+@{
+    ViewBag.Title = "CampaignWizard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var triggerList = (List<MailSync.Models.CampaignDetails>)ViewBag.TriggerList;
+    var campaignHeading = triggerList.Select(x => x.Type).FirstOrDefault();
+    int count = 1;
+    var typeId = (int)ViewBag.TypeId;
+    Session["campaignIdList"] = triggerList.Select(x => x.CampaignId).ToList();
+}
+
+@section Style {
+    <link href="~/Content/StyleSheets/TemplateStyles/stack-interface.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/TemplateStyles/flickity.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/TemplateStyles/socicon.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/TemplateStyles/lightbox.min.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/TemplateStyles/iconsmind.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/TemplateStyles/jquery.steps.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/TemplateStyles/custom.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/Campaign/CampaignWizard.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/Common/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/Common/bootstrap-select.min.css" rel="stylesheet" />
+}
+
+@section scripts
+{
+    <script src="~/Scripts/TemplateScripts/flickity.min.js"></script>
+    <script src="~/Scripts/Common/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/Common/bootstrap-select.min.js"></script>
+<script src="~/Scripts/EmailIformation.js"></script>
+
+}
+
+
+@if (triggerList != null)
+{
+    <div id="trigger-section">
+        <div class="row">
+            <div class="col-lg-12">
+                @Html.Hidden("type-id", typeId)
+                <h3>
+                    @campaignHeading - Campaign
+                    <a class="btn btn-success" id="Next-btn" data-toggle="modal" data-target="#nextModal" style="float:right;">Next --></a> 
+                </h3>
+                <ol class="process-3">
+                    @foreach (var campaign in triggerList)
+                    {
+                        <li class="process_item">
+                            <div class="process__number">
+                                <span>@count</span>
+                                @{
+                                    count++;
+                                }
+                            </div>
+                            <div class="process__body">
+                                <h4>
+                                    Trigger:
+                                    @if (campaign.IsDaily)
+                                    {
+                                        <span>
+                                            Every Day
+                                        </span>
+                                    }
+                                    else if (campaign.IsOnce)
+                                    {
+                                        <span>
+                                            Once
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span>
+                                            None
+                                        </span>
+                                    }
+                                </h4>
+                                <div id="new-subscribe" class="panel panel-default col-lg-12">
+                                    <div class="panel-body">
+                                        <div class="col-lg-2">
+                                            <img src="~/Content/Images/campaign/schedule.png" style="width:100%" />
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <h4>@campaign.Name</h4>
+                                            <div class="camp-section">
+                                                <span class="camp-label">Schedule: </span>
+                                                @if (campaign.IsDaily)
+                                                {
+                                                    <span class="label-btn label-success">
+                                                        Every Day
+                                                    </span>
+                                                }
+                                                else if (campaign.IsOnce)
+                                                {
+                                                    <span class="label-btn label-success">
+                                                        Once
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label-btn label-danger">
+                                                        None
+                                                    </span>
+                                                }
+
+                                                <a data-toggle="modal" data-target="#myModal" onclick="AssignCampaignId(@campaign.CampaignId)"> (Edit)</a>
+                                            </div>
+                                            <div class="camp-section">
+                                                <span class="camp-label">User Group: </span> <span class="label-btn label-success">@campaign.UserGroupName</span>
+                                            </div>
+                                            <div class="camp-section">
+                                                <span class="camp-label">Mail Details: </span>
+                                                @if (campaign.IsMailDetailsAdded)
+                                                {
+                                                    <span class="label-btn label-success">
+                                                        Added
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label-btn label-danger">
+                                                        None
+                                                    </span>
+                                                }
+
+                                                <a data-toggle="modal" data-target="#addModal" onclick="AssignCampaignId(@campaign.CampaignId)"> (Edit)</a>
+                                            </div>
+                                            <div class="camp-section">
+                                                <span class="camp-label">Mail Template: </span> 
+
+                                                @if (campaign.IsMailTemplatesAdded)
+                                                {
+                                                    <span class="label-btn label-success">
+                                                        Added
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label-btn label-danger">
+                                                        None
+                                                    </span>
+                                                }
+
+                                                <a href="/campaign/wizard/@typeId/template/@campaign.CampaignId"> (Edit)</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                                    }
+                </ol>
+                <div style="text-align: center">
+                    <a class="btn btn-success" id="trigger-add">Add Trigger</a>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit schedule</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div style="font-size:16px; font-weight: 600;">Select a trigger action</div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio" id="once">Once</label>
+                            </div>
+                            <div class="radio" style="margin-left: 20px">
+                                <label><input type="radio" name="optradio">Every Day</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="usr">Select a start date for the trigger action</label>
+                            <input type="text" class="form-control" id="date-trigger" placeholder="dd/MM/YYYY hh:mm">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" id="create-schedule" class="btn btn-primary" style="padding: 6px 23px; margin-right: 20px;">Add</button>
+                        <button type="button" id="cancel-schedule" data-dismiss="modal" class="btn btn-primary">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @*/* Model dailgue*/*@
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel-2">Email Details</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">Email Subject</label>
+                            <div class="" style="margin-left:90px;display:inline-block">
+                                <input class="form-control" type="text" id="emailSubject" style="width:400px">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">From name</label>
+                            <div class="" style="margin-left:105px;display:inline-block">
+                                <input class="form-control" type="text" id="name" style="width:400px">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="example-text-input" class="col-2 col-form-label">From email address</label>
+                            <div class="" style="margin-left:50px;display:inline-block">
+                                <input class="form-control" type="text" id="emailAddress" style="width:400px">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer" style="text-align:center">
+                        <button type="button" id="add-email-details" class="btn btn-dialog btn-primary" style="padding: 6px 23px; margin-right: 20px;">Add</button>
+                        <button type="button" class="btn btn-dialog btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+
+        @*/* Model dailgue*/*@
+        <div class="modal fade" id="nextModal" tabindex="-1" role="dialog" aria-labelledby="nextModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel-2">Confirmation</h4>
+                    </div>
+
+                    <div class="modal-body" style="font-size:18px;">
+                        Do you want to schedule the campaign? 
+                    </div>
+
+                    <div class="modal-footer" style="text-align: center">
+                        <a href="/campaign/schedule/" class="btn btn-dialog btn-primary">Yes</a>
+                        <button type="button" class="btn btn-dialog btn-primary" data-dismiss="modal" style="margin-left:20px">No</button>
+                    </div>
+                </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+        </div><!-- modal -->
+    </div>
+}

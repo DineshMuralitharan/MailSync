@@ -1,0 +1,126 @@
+#group {
+    .create-group {
+        float: right;
+        margin-top: -40px;
+        color: #ffffff;
+        background-color: #666;
+    }
+
+    .group-heading {
+        margin-bottom: 70px;
+        margin-top: 40px;
+    }
+
+    .email-content-section {
+        height: 115px;
+        border-bottom: 1px solid #e0e0e0;
+        margin-top: 30px;
+
+        .img {
+            width: 50px;
+            height: 70px;
+            float: left;
+
+            .ebook-icon, .cart-icon {
+                width: 65%;               
+                background-repeat: no-repeat;
+            }
+            .blog-icon, .renewal-icon {
+                width: 75%;               
+                background-repeat: no-repeat;
+            }
+        }
+
+        .tab-content {
+            width: 38%;
+            float: left;
+            margin-top: -10px;
+        }
+
+        .sending-status {
+            float: left;
+            padding-right: 45px;
+        }
+
+        .node-status {
+            .open-count {
+                float: left;
+                padding-right: 38px;
+            }
+        }
+
+        .stats-button {
+            float: right;
+
+            .stats-btn {
+                margin-right: 209px;
+
+                &:hover {
+                    background-color: #D3D3D3;
+                }
+            }
+        }
+    }
+}
+
+
+#group-page {
+    font-family: "Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
+
+    #myModal {
+        .model-body {
+            margin-left: 10px;
+        }        
+            #create_group
+                {
+               margin-left:27%!important;
+            }
+        .modal-footer {
+            text-align: center;
+            border:none!important;
+        }
+
+        .panel-default {
+            margin-right: 30px;
+            height: 150px;
+            width: 30%;
+            cursor: pointer;
+
+            h4 {
+                text-align: center;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            p {
+                text-align: center;
+                font-size: 13px;
+            }
+        }
+
+        .panel-default:hover {
+            border: 2px solid #2c9ab7;
+        }
+
+        .modal-dialog {
+            width: 1000px;
+        }
+         
+
+        .btn-primary{           
+            font-weight: 600;
+        }
+
+        #create-group {
+            margin-right: 20px;
+        }
+
+        #group-name{ 
+            margin-bottom:30px;
+        }
+
+        .bootstrap-select{
+            width: 280px;
+        }
+    }
+}

@@ -1,0 +1,249 @@
+﻿@model MailSync.Models.CampaignModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "CampaignDetails";
+    var emailList = new MailSync.Models.ListModel().GetListName();
+}
+
+@section Style {
+    <link href="~/Content/campaigns.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/Common/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/Content/StyleSheets/Campaign/Campaign.css" rel="stylesheet" />
+    <style>
+        .report {
+            background-image: url('../../Content/Images/banner1-old.jpg');
+            background-size: 110%;
+        }
+    </style>
+}
+
+@section scripts
+{
+    <script src="~/Scripts/Common/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/Campaign/Campaign.js"></script>
+}
+@section BannerSection
+{
+    <div class="banner report">
+        <div class="text-cente banner-text">
+            Campaigns
+        </div>
+    </div>
+}
+<div id="campaigns">
+    <div class="col-lg-12 col-md-12 col-sm-12 campaigns-heading">
+        <span>
+            <a class="create-camp btn" value="Create Campaigns" style="float: right" data-toggle="modal" data-target="#myModal">Create Campaign</a>
+        </span>
+    </div>
+    @if (Model.Values != null)
+    {
+        foreach (var item in Model.Values)
+        {
+
+            <div class="col-lg-12 col-md-12 col-sm-12 email-content-section">
+                <div class="img">
+                    <img class="email-sending-icon" src="~/Content/Images/email-icon.jpg" />
+                    @*<span class="email-sending-icon"> </span>*@
+                </div>
+                <div class="tab-content">
+                    <h4 class="email-heading"> <a target="_blank" href="campaign/wizard/@item.TypeId"> @item.Name </a> </h4>
+                    <p> @item.Type </p>
+                    <p> @string.Format("{0:MMM d, yyyy, h:mm tt}", @item.CreatedDate) by @item.CreatedByUser</p>
+                </div>
+                <div class="slat_status sending-status">
+                    @if (item.MailStatus == "Sent")
+                    {
+                        <span data-dojo-attach-point="node_badge" class="badge info">@item.MailStatus</span>
+                    }
+                    else if (item.MailStatus == "Draft")
+                    {
+                        <span data-dojo-attach-point="node_badge" class="badge grey-badge info">@item.MailStatus</span>
+                    }
+                    else
+                    {
+                        <span data-dojo-attach-point="node_badge" class="badge info">@item.MailStatus</span>
+                    }
+                </div>
+                @if (item.MailStatus != "Draft")
+                {
+                    <div class="node-status">
+                        <div class="open-count">
+                            <p> @item.OpenCount </p>
+                            <p> Opens </p>
+                        </div>
+                    </div>
+                }
+                <div class="edit-button">
+                    <a class="edit-btn btn" href="campaign/wizard/@item.TypeId"> Edit </a>
+                    <a class="stats-btn btn" href="statistics/campaign/@item.CampaignId"> Stats </a>
+                </div>
+                @*<div class="stats-button">
+                        <a class="edit-btn btn" href="campaign/wizard/@item.TypeId"> Stats </a>
+                    </div>*@
+            </div>
+        }
+    }
+</div>
+
+<div id="campaign-page">
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content container">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="CloseModel()">&times;</button>
+                    <h3 class="modal-title">Create Campaign</h3>
+                </div>
+                <div class="modal-body">
+                    <div id="template-section" class="row">
+                        <div id="new-subscribe" class="panel panel-default col-lg-4">
+                            <div class="panel-body">
+                                <h4>New subscribers</h4>
+                                <p>Introduce yourself to people when they sign up for your list.</p>
+                            </div>
+                        </div>
+                        <div id="birthday-wish" class="panel panel-default col-lg-4">
+                            <div class="panel-body">
+                                <h4>Birthday wishes</h4>
+                                <p>Celebrate with an exclusive offer or cheerful message that sends based on the birthday field in your list.</p>
+                            </div>
+                        </div>
+                        <div id="blog-update" class="panel panel-default col-lg-4" style="margin-right:0px;">
+                            <div class="panel-body">
+                                <h4>Blog updates</h4>
+                                <p>Help contacts keep up with your blog by sending new posts straight to their inboxes.</p>
+                            </div>
+                        </div>
+                        <div id="abandoned-cart" class="panel panel-default col-lg-4">
+                            <div class="panel-body">
+                                <h4>Recover abandoned carts</h4>
+                                <p>Send a friendly reminder to people who leave your store without checking out.</p>
+                            </div>
+                        </div>
+                        <div id="release-notify" class="panel panel-default col-lg-4">
+                            <div class="panel-body">
+                                <h4>Release notifications</h4>
+                                <p>Send notifications to people regarding your release updates.</p>
+                            </div>
+                        </div>
+                        <div id="renewal-notify" class="panel panel-default col-lg-4">
+                            <div class="panel-body">
+                                <h4>Renewal Automation</h4>
+                                <p>Send a friendly reminder to people regarding product renewals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="list" class="row hide">
+                        <div class="col-lg-12">
+
+                            <div id="new-subscribe-section" class="hide campaign-section">
+                                <div class="col-lg-3">
+                                    <img src="~/Content/Images/campaign/Subscriber.jpg" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>
+                                        New subscribers
+                                    </h3>
+                                    <p>
+                                        First impressions matter, so automate your welcome message to make sure no one slips through the cracks. Plus, you’ll get 5 times more orders per recipient compared to bulk emails.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="birthday-wish-section" class="hide campaign-section">
+                                <div class="col-lg-3">
+                                    <img src="~/Content/Images/campaign/birthday.jpg" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>
+                                        Birthday wishes
+                                    </h3>
+                                    <p>
+                                        Almost everyone likes attention on their birthday. And even if they don't, they'll still appreciate a great deal. Use date-based automation to send a celebratory message or promo code to each of your subscribed contacts on their birthday.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="blog-update-section" class="hide campaign-section">
+                                <div class="col-lg-3">
+                                    <img src="~/Content/Images/campaign/blog.png" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>
+                                        Blog updates
+                                    </h3>
+                                    <p>
+                                        Don't let subscribers miss out on any of your posts. Instead, bring your blog to their inboxes. The RSS email campaign automatically pulls in content from your feed and delivers it to your contacts on a daily, weekly, or monthly basis.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div id="recover-cart-section" class="hide campaign-section">
+                                <div class="col-lg-3">
+                                    <img src="~/Content/Images/campaign/cart.png" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>
+                                        Recover abandoned carts
+                                    </h3>
+                                    <p>
+                                        Sometimes your customer wants to buy something, but they get distracted and leave it in their cart. Increase your email-generated sales by 12%, on average, by nudging them to finish checking out.
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="release-automation-section" class="hide campaign-section">
+                                <div class="col-lg-3">
+                                    <img src="~/Content/Images/campaign/release.png" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>
+                                        Release notifications
+                                    </h3>
+                                    <p>
+                                        Send notifications to your customers regarding your new product releases and its new features.
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="renewal-automation-section" class="hide campaign-section">
+                                <div class="col-lg-3">
+                                    <img src="~/Content/Images/campaign/renewal.png" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <h3>
+                                        Renewal Automation
+                                    </h3>
+                                    <p>
+                                        Send a reminder notification to your customers regarding their product renewal details.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-offset-3 col-lg-9">
+                                <h5>
+                                    Campaign Name
+                                </h5>
+
+                                <input type="text" class="form-control" id="campaign-name" placeholder="Enter campaign name" required>
+
+                                <h5>
+                                    Campaign User List
+                                </h5>
+
+                                @Html.DropDownList("mail-list", emailList as SelectList, htmlAttributes: new { @class = "selectpicker", @name = "mail-list", data_live_search = "true", @id = "user-role" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer hide">
+                    <button type="button" id="create-campaign" class="btn btn-primary">Create</button>
+                    <button type="button" id="cancel-campaign" onclick="CloseModel()" class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

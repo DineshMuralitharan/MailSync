@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="225387fe51a74b42b579286f0343cce6" Name="Diagram1">
+        <EntityTypeShape EntityType="DataEntityModel.CampaignListMapping" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.Campaign" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.CampaignType" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.CustomerList" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.CustomerListMapping" Width="1.5" PointX="10.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.Customer" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.Email" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.EmailStatistic" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.Report" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.Template" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataEntityModel.User" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DataEntityModel.FK__CampaignL__Campa__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__CampaignL__ListI__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__Campaigns__Type__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__Email__CampaignI__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__EmailStat__Campa__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__Reports__Campaig__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__CustomerL__ListI__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__Email__CustomerL__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__CustomerL__Custo__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__EmailStat__Custo__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__Email__TemplateI__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="DataEntityModel.FK__EmailStat__Repor__2E1BDC42" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DataEntityModel.EmailDetail" Width="1.5" PointX="5.25" PointY="20.625" />
+        <AssociationConnector Association="DataEntityModel.FK__EmailDeta__Campa__3B75D760" />
+        <EntityTypeShape EntityType="DataEntityModel.CartDetail" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DataEntityModel.ScheduleDetail" Width="1.5" PointX="5.25" PointY="24.875" />
+        <AssociationConnector Association="DataEntityModel.FK__ScheduleD__Campa__4222D4EF" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,177 @@
+/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.alertdlg-icon,.confirmdialog-icon{box-sizing:content-box;user-select:none}.dropdown-title,.ellipsis{overflow:hidden;text-overflow:ellipsis}body{padding-left:50px;padding-bottom:20px;background-color:#f3f3f4;font-family:Roboto,segoe ui}.page-content{padding-left:15px;padding-right:15px}.body-content .grid-content,.body-content .grid-no-content{padding:20px}.form-control:focus{border-color:#ad5393}.logo-menu{left:50px}.bg-white{background-color:#fff!important}.chapter-title{margin-top:0}a .glyphicon{padding-right:15px}#submit:focus{border-color:#a964a8!important;box-shadow:0 0 10px #a964a8}.releaselist_filters{font-family:-apple-system,sans-serif;font-size:1.2rem}.body-content{background:#f3f3f4}.product.open .dropdown-toggle{color:#1890e3}a{color:inherit;cursor:pointer;text-decoration:none}img{border:0;vertical-align:middle}.link{color:#337ab7!important}article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}.required:after{color:#f44336;content:" *";font-weight:700}.error-message-style,.errorLabel{color:red!important;font-weight:400!important}.errorLabel{font-size:12px!important;margin-top:3px!important}.ellipsis{white-space:nowrap}.error-message-style{display:none;font-size:13px!important}.e-input,.e-input-group{border-color:#ad5393!important}::-webkit-input-placeholder{color:#bfbfbf}:-ms-input-placeholder{color:#bfbfbf}::-moz-placeholder{color:#bfbfbf}:-moz-placeholder{color:#bfbfbf}label{cursor:default!important;color:#757575}.primarycolor{color:rgba(0,0,0,.87)!important}.secondarycolor{color:#757575!important}.link-theme-color,.link-theme-color:hover{color:#ad5393}b,strong{font-weight:500!important}.side-header{color:rgba(0,0,0,.87);font-size:15px;font-weight:500}.sub-heading{color:#757575;display:inline-block;padding-right:58px;width:205px}.page-header-title{font-size:15px;margin-left:20px;padding-bottom:15px;padding-top:15px;color:rgba(0,0,0,.87);font-weight:400}.fa,.glyphicon{color:rgba(0,0,0,.54)}.information{color:rgba(0,0,0,.87);padding-left:15px}.detail{padding-bottom:10px}.white-icon-color{color:#fff!important}pre,pre a{color:rgba(0,0,0,.87)!important}pre{font-family:Roboto,segoe ui!important;font-size:14px}.labelforview{color:#a964a8!important;font-size:13px!important;top:-9px!important;transform:translate3d(0,-6px,0) scale(.92)!important}.alertdlg-content,.breadcrumb>.active{color:rgba(0,0,0,.87)!important}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.alertdlg-icon{border:4px solid transparent;border-radius:50%;cursor:default;height:80px;margin:20px auto 30px;padding:0;position:relative;width:80px}.alertdlg-icon.alertdlg-success [class^=alertdlg-success-circular-line][class$=left]{border-radius:120px 0 0 120px;left:-33px;top:-7px;transform:rotate(-45deg);transform-origin:60px 60px}.alertdlg-icon.alertdlg-success [class^=alertdlg-success-circular-line]{height:120px;position:absolute;width:60px}.alertdlg-icon.alertdlg-success [class^=alertdlg-success-line][class$=tip]{left:14px;top:46px;transform:rotate(45deg);width:25px}.alertdlg-icon.alertdlg-success [class^=alertdlg-success-line][class$=long]{right:8px;top:38px;transform:rotate(-45deg);width:47px}.alertdlg-icon.alertdlg-success [class^=alertdlg-success-line]{background-color:#a5dc86;border-radius:2px;display:block;height:5px;position:absolute;z-index:2}#commenttext,.breadcrumb{background-color:transparent}.alertdlg-icon.alertdlg-success .alertdlg-success-ring{border:4px solid rgba(165,220,134,.2);border-radius:50%;box-sizing:content-box;height:80px;left:-4px;position:absolute;top:-4px;width:80px;z-index:2}.alertdlg-content{float:none;font-size:18px!important;line-height:normal;margin:0;padding:0;position:relative;text-align:center;word-wrap:break-word}#commonAlertDialog{max-height:unset!important}#commonAlertDialog .e-dlg-header-content{display:none}#commonAlertDialog_dialog-content{padding-top:20px}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.breadcrumb{padding:0}.breadcrumb>li{padding:0!important}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.no-details-found-message{margin-left:17px}#commenttext{border:none;font-family:Roboto,segoe ui;margin-left:-10px;padding-bottom:0;white-space:pre-line}.icon-button{border-radius:50%;cursor:pointer;color:rgba(0,0,0,.54);height:26px;padding:2px;position:absolute;width:28px}.commentdiv:hover{background:#f5f5f5;border-left:4px solid #ad5393}.commentdiv{background:0 0;border-left:4px solid transparent}.comment-section{border-bottom:1px solid #ccc;padding:20px 10px 10px}.comment-updatedby,.comment-updatedby:hover{color:#ad5393}.comment-type-tag{color:#fff;padding:4px 8px;font-size:10px;border-radius:3px}.confirmdialog-content,.confirmdialog-title{color:rgba(0,0,0,.87);word-wrap:break-word;text-align:center;position:relative}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.confirmdialog-title{display:block;font-size:30px!important;margin:0 0 .4em;padding:0;text-transform:none}#confirmDialog .e-dlg-header-content,.dialgueHeaderremove .e-dlg-header-content{display:none}.confirmdialog-content{float:none;font-size:18px!important;line-height:normal;margin:0;padding:0}.confirmdialog-icon.confirmdialog-warning{border-color:#facea8;color:#f8bb86;font-size:60px!important;line-height:80px;text-align:center}.confirmdialog-icon{border:4px solid transparent;border-radius:50%;cursor:default;height:80px;margin:20px auto 30px;padding:0;position:relative;width:80px!important}#confirmDialog_dialog-content{padding-top:20px}.confirmdialog-bold-content{font-size:18px!important;font-weight:500!important;color:rgba(0,0,0,.87)}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.dropdown-menu{-moz-border-radius:2px;-webkit-border-radius:2px;border:none;border-radius:2px;box-shadow:0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);display:none;float:left;font-size:13px;left:0;list-style:none;min-width:115px!important;position:absolute;text-shadow:none;top:100%;z-index:1000}.dropdown-menu>li>a{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;color:rgba(0,0,0,.87);font-size:13px;font-weight:400;height:32px;padding:8px 15px 8px 24px;text-align:left}.dropdown-menu>li>a>.fa,.dropdown-menu>li>a>.glyphicon,.dropdown-menu>li>a>i{padding-right:10px}.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{color:rgba(0,0,0,.87);background:rgba(158,158,158,.2);border-radius:0}.dropdown-menu>li>a.font-bold{font-weight:500}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.dt-icon{background-position:3px -305px!important}.dashboard-icon{background-position:3px -206px!important}.build-icon{background-position:3px -157px!important}.hr-icon{background-position:3px -109px!important}.itools-icon{background-position:3px -255px!important}.patch-icon{background-position:3px -60px!important}#dropdownInternalSites{border:none;margin-top:45px;max-width:250px;min-width:210px!important;padding:0 8px}.dropdown-header{color:#757575!important;float:none!important}.menu-list{display:table!important;float:none!important;padding-top:7px!important}.menu-list>a{font-size:13px!important;font-weight:400!important;padding:5px 3px!important;color:#212121}.menu-list a:focus,.menu-list a:hover{background:0 0!important}#currentIconSite:focus,#currentIconSite:hover{color:#00f!important}.dropdown-menu .divider{background-color:#e5e5e5;float:none!important;height:1px;margin:9px 0;overflow:hidden}.gitlab-icon,.menu-siteicon,.sq-icon{display:table-cell;height:40px;vertical-align:middle;width:50px}.menu-siteicon{background:url(//cdn.syncfusion.com/hrportal/images/logo/internalsites.png) no-repeat;font-size:30px!important}.gitlab-icon{background:url(//cdn.syncfusion.com/hrportal/images/logo/gitlab.png) 3px 3px no-repeat;background-size:33px 30px}.sq-icon{background:url(//cdn.syncfusion.com/hrportal/images/logo/discussionsforum.png) 3px 3px no-repeat;background-size:33px 33px}.internalsites-container{font-size:13px!important;left:18px!important;top:16%!important}.menu-list a:hover{color:#ad5393!important}.link-content,.link-content:hover{color:rgba(0,0,0,.87)}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.link-content{cursor:pointer}.link-colored-content,.link-colored-content:hover{color:#0052cc!important}.link-colored-content{cursor:pointer}.secondary-link-content{color:#000!important;cursor:pointer}.secondary-link-content:hover{color:#000!important}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/#progressDialogModal{display:block;bottom:0;left:0;position:fixed;right:0;top:0;z-index:1070;background:rgba(0,0,0,.3)}.loading-icon{color:#fff;font-size:50px!important;left:50%;position:absolute;top:50%}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/button .dropdown-toggle-caret .js-projects-dropdown-toggle{background:0 0;border:transparent;color:#5c5c5c;cursor:pointer;position:absolute}.dropdown-title{border-bottom:1px solid rgba(0,0,0,.12);font-size:14px;font-weight:500;line-height:2;margin:0 10px 10px;padding:4px 25px 10px;position:relative;text-align:center;white-space:nowrap}.dropdown-content{max-height:215px;overflow-y:auto}.dropdown-input-field{border:1px solid rgba(0,0,0,.12);border-radius:2px;color:#555;line-height:30px;min-height:30px;outline:0;padding:0 7px;width:100%}.dropdown-input{margin-bottom:5px;padding:0 10px;position:relative}.dropdown-input .dropdown-input-clear{cursor:pointer;display:none;font-size:14px;pointer-events:all;right:22px;top:9px}.dropdown-input .fa{color:#c7c7c7;font-size:12px;pointer-events:none;position:absolute;right:20px;top:10px}.dropdown-menu-close{height:20px;right:5px;top:-3px;width:20px}.dropdown-title-button{background:0 0;border:0;color:#bfbfbf;font-size:14px;outline:0;padding-top:4px;position:absolute}.dropdown-menu-projects{margin-left:20px;width:280px}.dropdown-menu-projects a{white-space:normal}.searchDropdown-list{padding:8px 10px 0}.search-list-container{border-radius:2px;color:rgba(0,0,0,.87);display:block;line-height:initial;overflow:hidden;padding:5px 8px!important;position:relative;text-overflow:ellipsis;white-space:nowrap}.searchDropdown-UL{list-style-type:none;margin:0;padding:0}.searchDropdown-list a:focus,.searchDropdown-list a:hover{color:rgba(0,0,0,.87)!important;background:rgba(158,158,158,.2);border-radius:0;text-decoration:none}.dropdown-content a{white-space:nowrap!important}#search-loader{background:url(https://cdn.syncfusion.com/productmanagement/images/loader/smallloader.gif) center center no-repeat!important;padding:10px!important}.dropdown-menu-empty{padding-left:17px;padding-top:6px}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.switch{display:inline-block;height:20px;margin-bottom:-5px!important;margin-left:5px;position:relative;width:40px}.switch input{display:none}.slider{-webkit-transition:.4s;background-color:#ccc;bottom:0;cursor:pointer;left:0;position:absolute;right:0;transition:.4s;top:0}.slider:before{-webkit-transition:.4s;background-color:#fff;bottom:4px;content:"";height:13px;left:4px;position:absolute;transition:.4s;width:13px}input:checked+.slider{background-color:#a964a8!important}input:focus+.slider{box-shadow:0 0 1px #a964a8!important}input:checked+.slider:before{-webkit-transform:translateX(19px);-ms-transform:translateX(19px);transform:translateX(19px)}.slider.round{border-radius:34px}.slider.round:before{border-radius:50%}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.navbar,.navbar.navbar-default{background-color:#fff;color:#212121;font-size:14px;height:45px;min-height:45px}.appHeader a,.main-nav a,.menua,.right-menu a{font-size:16px}.navbar li,.navbar.navbar-default li{padding-left:30px;padding-right:30px}.tab-view .logo-menu{left:30px}.tab-view .main-nav .link .glyphicon{display:inline-block}.tab-view .main-nav .link span{display:none}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.menua{color:#fff;text-decoration:none!important;padding:15px 13px}.menua img{display:block}.menua .arrowdown{border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff;display:none;height:0;position:fixed;top:24px;width:0}.menua:hover{color:#fff!important}.menua:hover .arrowdown,.open .arrowdown{display:inline}.appHeader .material-menu-popup,.main-nav .material-menu-popup,.right-menu .material-menu-popup{border:1px solid #e4e8eb;border-radius:0}.appHeader .login-dropdown,.main-nav .login-dropdown,.right-menu .login-dropdown{right:-15px;top:54px}.main-nav .link .glyphicon{display:block}.main-nav .active{background-color:#e7abf2}.sub-menu_container{overflow:hidden;text-align:center;width:auto}.sub-menu_container li{display:inline-block;list-style:none}.sub-menu_container ul li a{background-color:#fff;border:1px solid #fff;color:#333;display:inline-block;height:41px;line-height:32px;margin:2px;min-height:35px;min-width:35px;padding:5px 5px 0;text-align:center;text-decoration:none}@media (max-width:800px){.appHeader .right-menu .account .username img{border-radius:50%;display:inline-block;height:20px;margin-top:18px;width:20px}}@media (max-width:780px){.tab-view .arrowdown{margin-left:-20px}.appHeader{padding-left:5px}.menua{margin-right:-15px}.menua img{border-radius:50%;display:inline-block;height:30px;margin-top:-5px}.menua .arrowdown{top:25px}.menua span{display:none}}@media (max-width:600px){.sub-menu{padding:0 30px 0 24px}.sub-menu ul{padding-left:0}.main-nav a,.sub-menu_container li{padding-left:0!important}.menua{margin-right:-15px}.menua img{border-radius:50%;display:block;display:inline-block;height:30px;margin-top:-50px}.menua .arrowdown{top:25px}.link{left:15px;top:-20px}.sub-menu_container ul{transition:all ease 750ms;white-space:nowrap}.main-nav a{display:none!important}.main-nav .product{padding-left:5px!important}.mobile-menu,.username{display:inline-block}}@media (max-width:400px){.main-nav a span{display:none!important}}.navbar-right~.navbar-right{margin-right:-15px}.appHeader{background:#ad5393;border-bottom:1px solid #e2e7ea;box-shadow:0 1px 1px -1px #e8eaeb;height:100%;left:0;position:fixed;right:0;top:0;width:55px}.appHeader .dropdown-menu{position:inherit!important}.appHeader .main-nav{left:8px}.appHeader .link::after{right:0;top:-14px}.appHeader .right-menu::after{content:"";display:inline-block;height:55px;position:absolute;top:0;width:1px}.appHeader-link,.right-menu a{color:#fff;display:inline-block;height:100%;transition:color .15s ease-out 0s;width:100%;text-decoration:none}.appHeader a{cursor:pointer}.appHeader-link{font-weight:100;padding:25px 18px}.appHeader-link:hover{color:#fff;text-decoration:none}.appHeader .active a{color:#fff;font-weight:600}.right-menu a{font-weight:400;padding:17px 0 17px 30px}.mobile-menu{display:none}.popupMenuWrapper{position:relative}.appHeader .right-menu .account .username img{border-radius:50%;display:inline-block;height:36px;width:36px}.appHeader .right-menu .account .username .dropdown-menu{position:absolute!important;margin-top:-91px;margin-right:-188px}.pn-ProductNav,.pn-ReleaseNav,.pn-RoomProfileNav{border-color:#fff;font-size:0;overflow:hidden;position:relative;white-space:nowrap}.pn-ProductNav_Contents,.pn-ReleaseNav_Contents,.pn-RoomProfileNav_Contents{position:relative;transition:transform .2s ease-in-out 0s,-webkit-transform .2s ease-in-out 0s}.pn-ProductNav_Contents-no-transition,.pn-ReleaseNav_Contents-no-transition,.pn-RoomProfileNav_Contents-no-transition{transition:none 0s ease 0s}.pn-ProductNav_Link,.pn-RoomProfileNav_Link{-moz-box-align:center;align-items:center;border:1px solid transparent;color:#888;display:inline-flex;font-size:1.2rem;min-height:44px;padding:0 11px;text-decoration:none}.pn-ProductNav_Link+.pn-ProductNav_Link,.pn-RoomProfileNav_Link+.pn-RoomProfileNav_Link{border-left-color:#eee}#divs .selected{border-bottom:3px solid #ad5393;font-weight:500}.pn-ProductNav_Indicator,.pn-RoomProfileNav_Indicator{background-color:transparent;bottom:0;height:4px;left:0;position:absolute;transform-origin:0 0 0;transition:transform .2s ease-in-out 0s,background-color .2s ease-in-out 0s,-webkit-transform .2s ease-in-out 0s;width:100px}.pn-Advancer{-moz-appearance:none;background:0 0;border:0;bottom:0;display:none;height:20px;opacity:50;padding:0;position:absolute;transition:opacity .3s ease 0s;top:65px}.appHeader .right-menu{position:absolute;right:20px;bottom:0}.topmenu-dropdown-release{left:auto!important;margin-right:-63px;right:0}.topmenu-dropdown-login{left:auto!important;right:0;top:54px!important}.topmenu-dropdown{color:rgba(0,0,0,.87)!important;font-weight:400!important}.sidenav .link-internal-sites i,.sidenav a{color:#fff}.sidenav{height:100%;width:55px;position:fixed;top:0;left:0;background-color:#ab47bc;overflow-x:hidden;padding-top:20px}.sidenav a{text-decoration:none;font-size:25px;display:block}.sidenav .syncfusionlogo{padding:6px 8px 6px 10px;cursor:pointer}.sidenav .syncfusionlogo:hover .arrowdown{display:inline}.sidenav .linkproduct{padding:15px 0 6px 12px;margin-top:25px}.sidenav .linkrelease{padding:15px 13px 5px 12px}.sidenav .userprofile{padding:6px 8px 6px 12px}.sidenav .link-internal-sites{padding:15px 13px 5px 16px}.sidenav .active{background-color:#f3e5f5;color:#ab47bc}.sidenav .arrowdown{border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #fff;display:none;height:0;position:fixed;top:70px;left:20px;width:0}.userprofilediv{position:fixed;bottom:0}.userprofilediv .dropdown-menu{top:-75%;left:110%}.linkreleasediv{position:fixed;margin-top:10px}.alertDlgButton,.confirmdlg-buttons{border-radius:5px!important;height:38px!important;margin-bottom:15px!important;margin-top:15px!important}.linkreleasediv .dropdown-menu{top:15%;left:100%}.link-internal-sites-div{position:fixed;bottom:55px}.link-internal-sites-div .dropdown-menu{left:55px;top:-457px;width:230px;padding-left:20px}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.e-btn.btn-blue{background-color:#265d8c;color:#fff}.e-btn.btn-blue.e-active,.e-btn.btn-blue:active,.e-btn.btn-blue:focus,.e-btn.btn-blue:hover{background-color:#204d74;color:#fff}.e-btn.btn-blue:disabled{background-color:#e0e0e0;box-shadow:none;color:#bcbcbc}.e-btn.btn-gray{background-color:#e0e0e0;color:#212121}.e-btn.btn-gray.e-active,.e-btn.btn-gray:active,.e-btn.btn-gray:focus,.e-btn.btn-gray:hover{background-color:#bfbfbf;color:#212121}.e-btn.btn-gray:disabled{background-color:#e0e0e0;box-shadow:none;color:#bcbcbc}.e-btn.btn-red{background-color:#ed5565!important;color:#fff}.e-btn.btn-red.e-active,.e-btn.btn-red:active,.e-btn.btn-red:focus,.e-btn.btn-red:hover{background-color:#e92f42!important;color:#fff}.e-btn.btn-red:disabled{background-color:#e0e0e0;box-shadow:none;color:#bcbcbc}.e-btn:disabled{cursor:not-allowed}.dlg-btn-secondary{color:#7f7f7f!important}.confirmdlg-buttons{font-size:15px!important;margin-left:8px!important;width:125px!important}.confirmdlg-secondary-button{margin-right:21%!important}.alertDlgButton{font-size:17px!important;margin-right:39%!important;width:19%!important}.btn-smaller{font-size:8px!important;height:22px!important;line-height:21px!important;padding:0 6px!important}.search-checkbox .e-checkbox-wrapper.e-control.e-keyboard{margin-left:17px!important;margin-top:4px!important;margin-bottom:2px!important}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/.quickFilter li a{line-height:.5;font-size:13px}.quickFilter li.active a{background:#ad5393!important;color:#fff!important;line-height:.5;border-color:#ad5393!important;border-top-right-radius:0!important;border-top-left-radius:0!important}.quickFilter li a:hover,.quickFilter li.active a:hover{line-height:.5;border-top-right-radius:0;border-top-left-radius:0}.quickFilter li.active a:hover{background:#ad5393;cursor:pointer;border-color:#ad5393}.quickFilter li a:hover{color:rgba(0,0,0,.87);border-color:#eee}.quickFilter{padding-left:15px;padding-bottom:20px}.quickFilter .nav-tabs{border-bottom:0}/*! Note: 
+    1. Before adding color codes, please check whether the color code is already present or not.
+    2. Add the color codes in their series and arrange it alphabetically
+    3. Follow the below naming conventions to add color code
+
+          Color code        Color Variable
+        ----------------------------------------
+            #AAAAAA		- 	$color_AA
+            #ABABAB     -   $color_AB
+            #ABCABC     -   $color_ABC
+            #ABCDEF     -   $color_ABCDEF
+**/#addImpersonateUserDialog .e-dlg-content,#addImpersonateUserDialog .e-dlg-header-content{padding-bottom:10px!important}#impersonateUserAssgineesList_popup{max-height:250px!important;overflow-y:scroll;width:356px!important;z-index:1000000!important}#impersonateUserIcon{color:#fff}@font-face{font-family:productmanagement;src:url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');font-weight:400;font-style:normal}[class*=" sficon-"],[class^=sficon-]{font-family:productmanagement!important;speak:none;font-size:30px;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.sficon-product:before{content:"\e900"}.sficon-user:before{content:"\e901"}.sficon-release:before{content:"\e902"}

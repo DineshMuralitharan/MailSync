@@ -1,0 +1,41 @@
+.templatePanal {
+    img {
+        width: 100%;
+        cursor: pointer;
+        height: 243px;
+    }
+
+    img:hover {
+        -moz-box-shadow: 0 0 10px #ccc;
+        -webkit-box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px #ccc;
+        width: 102%;
+    }
+
+    margin-right: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 300px;
+    width: 300px;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.existing-temp {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 24px;
+}
+
+.temp-name {
+    text-align: center;
+    font-weight: 600;
+    padding-top: 4px;
+}
+
+.row {
+    margin-top: 28px;
+    margin-bottom: 18px;
+}
